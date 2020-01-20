@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'formpage.dart';//import page nextpage
 
 void main() => runApp(MyApp());
 
@@ -21,6 +22,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      //routes settings
+      routes: <String, WidgetBuilder>{
+        '/formpage' : (BuildContext context) => new FormPage(),
+        //'/infopage' : (BuildContext context) => new UpdatePage(),
+      },
+
     );
   }
 }
@@ -108,6 +115,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   labelText: 'Pick a number to start',
                 ),
               ),
+            ),
+            Padding(
+                padding: EdgeInsets.all(16.0),
+                child:RaisedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/formpage');
+                    },//next page onPressed
+                  textColor: Colors.white,
+                  color: Colors.blue,
+                  child: const Text(
+                      'Next Page',
+                      style: TextStyle(fontSize: 20)
+                  ),
+                ),
+
             ),
 
             Text(
