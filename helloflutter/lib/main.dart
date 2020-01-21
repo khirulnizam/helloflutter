@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'formpage.dart';//import page nextpage
+import 'data.dart';//import data stuct
 
 void main() => runApp(MyApp());
 
+Data datanum;//define object from class
+
 class MyApp extends StatelessWidget {
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -24,13 +28,14 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       //routes settings
       routes: <String, WidgetBuilder>{
-        '/formpage' : (BuildContext context) => new FormPage(),
+        '/formpage' : (BuildContext context) => new FormPage(data:datanum),
         //'/infopage' : (BuildContext context) => new UpdatePage(),
       },
 
     );
   }
 }
+
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -46,6 +51,7 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -53,6 +59,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   final _numcontroller = TextEditingController();
+
 
   void _incrementCounter() {
     setState(() {
@@ -99,7 +106,11 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Image(image: AssetImage('assets/banner1024x500.png')),
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child:Image(image: AssetImage('assets/kuisbanner.png')),
+            ),
+
             Padding(
               padding: EdgeInsets.all(16.0),
               child:TextField(
@@ -119,24 +130,30 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
                 padding: EdgeInsets.all(16.0),
                 child:RaisedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/formpage');
-                    },//next page onPressed
                   textColor: Colors.white,
                   color: Colors.blue,
                   child: const Text(
-                      'Next Page',
+                      'Send num to Next Page',
                       style: TextStyle(fontSize: 20)
                   ),
+                  onPressed: () {
+                    datanum= Data(name:'Kerul', number: int.parse(_numcontroller.text));
+                    //Navigator.pushNamed(context,'/formpage');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => FormPage(
+                            data: datanum,
+                          )),
+                    );
+                    },//next page onPressed
+
                 ),
 
             ),
 
             Text(
-              'Num input',
-            ),
-            Text(
-              '$_counter',
+              'Number input $_counter',
               style: Theme.of(context).textTheme.display1,
             ),
           ],
