@@ -142,9 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => FormPage(
-                            data: datanum,
-                          )),
+                          builder: (context) => FormPage(data: datanum,)),
                     );
                     },//next page onPressed
 

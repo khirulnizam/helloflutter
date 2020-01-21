@@ -11,7 +11,6 @@ class FormPage extends StatelessWidget {
 
   TextEditingController _number = TextEditingController();
   TextEditingController _name = TextEditingController();
-  //_number.text='num';
 
 
   //@override
