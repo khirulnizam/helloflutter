@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'formpage.dart';//import page nextpage
-import 'data.dart';//import data stuct
+import 'data.dart';//import data struct
+//import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(MyApp());
 
