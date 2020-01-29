@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'data.dart';
 //filename formupdate.dart
 
 class FormUpdate extends StatelessWidget{
+  final Data data;
+
+  FormUpdate({@required this.data});
+  TextEditingController _number= new TextEditingController();
+  TextEditingController _name= new TextEditingController();
 
   Widget build(BuildContext context){
     return Scaffold(
@@ -11,7 +17,8 @@ class FormUpdate extends StatelessWidget{
         children:<Widget>[
           Image(image: AssetImage('assets/kuislogo.png')),
           Divider(),//jarak widget
-          TextField(
+          TextFormField(
+            initialValue: this.data.name,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               labelText: "Nama"
@@ -19,7 +26,8 @@ class FormUpdate extends StatelessWidget{
           ),
           Divider(),//jarak widget
 
-          TextField(
+          TextFormField(
+            initialValue: this.data.number.toString(),
             decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: "Nombor pilihan"

@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'formupdate.dart';
 //import 'package:fluttertoast/fluttertoast.dart';
 import 'package:toast/toast.dart';
+import 'data.dart';
 
 void main() => runApp(MyApp());
+
+Data datanum;
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -26,7 +29,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Hello PMJ'),
       //define routes
       routes:<String, WidgetBuilder>{
-        '/formupdate': (BuildContext context)=>new FormUpdate(),
+        '/formupdate': (BuildContext context)=>new FormUpdate(data:datanum),
       }//end routes
     );
   }
@@ -122,7 +125,11 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.blue,
               child: const Text('Next page'),
               onPressed: (){
-                Navigator.of(context).pushNamed('/formupdate');
+                datanum=Data(name:'Kerul2', number: int.parse(_numcontrol.text));
+                //Navigator.of(context).pushNamed('/formupdate');
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context)=> FormUpdate(data: datanum,),
+                ));
                 Toast.show("Input user "+_numcontrol.text, context,
                     duration: Toast.LENGTH_LONG, gravity: Toast.CENTER);
               },//end onPressed
