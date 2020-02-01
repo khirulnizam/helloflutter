@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "940982896980",
+    "firebase_url": "https://ordermakan-2209d.firebaseio.com",
+    "project_id": "ordermakan-2209d",
+    "storage_bucket": "ordermakan-2209d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940982896980:android:1ec52fe892941a5598a0c1",
+        "android_client_info": {
+          "package_name": "kerul.net.ordermakan2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940982896980-m03a4unfmlk8ejuov4h101q2knkh7k2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI24xwAnx-eGe6H1eo7B2tos6KfVIelwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940982896980-m03a4unfmlk8ejuov4h101q2knkh7k2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
