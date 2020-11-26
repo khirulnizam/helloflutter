@@ -1,7 +1,7 @@
 //class FormPage
 import 'package:flutter/material.dart';
 import 'data.dart';//import data stuct
-import 'package:toast/toast.dart';
+//import 'package:toast/toast.dart';
 
 class FormPage extends StatelessWidget {
   final Data data;
@@ -9,8 +9,8 @@ class FormPage extends StatelessWidget {
   FormPage({@required this.data});
   //num
 
-  TextEditingController _number = TextEditingController();
-  TextEditingController _name = TextEditingController();
+  //TextEditingController _number = TextEditingController();
+  //TextEditingController _name = TextEditingController();
 
 
   //@override
@@ -19,7 +19,8 @@ class FormPage extends StatelessWidget {
     return Scaffold(
       appBar: new AppBar(title: new Text('Form '
           'Page'),),
-      body: ListView(
+          
+      body: ListView(  //ListView container example
           padding: EdgeInsets.all(12.0),
           children: <Widget>[
               Padding(//TextField ID

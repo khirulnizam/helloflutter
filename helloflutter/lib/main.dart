@@ -60,6 +60,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   final _numcontroller = TextEditingController();
+  final _numcontroller2 = TextEditingController();
 
 
   void _incrementCounter() {
@@ -129,10 +130,30 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Padding(
+              padding: EdgeInsets.all(16.0),
+              child:TextField(
+                controller: _numcontroller2,
+                obscureText: false,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Pick 2nd number to start',
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child:RaisedButton(
+                color: Colors.green,
+                textColor: Colors.white,
+                child: const Text('Additional button'),
+                onPressed: () {},
+              ),
+            ),//end padding
+            Padding(
                 padding: EdgeInsets.all(16.0),
                 child:RaisedButton(
                   textColor: Colors.white,
-                  color: Colors.blue,
+                  color: Colors.black,
                   child: const Text(
                       'Send num to Next Page',
                       style: TextStyle(fontSize: 20)
@@ -145,10 +166,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(
                           builder: (context) => FormPage(data: datanum,)),
                     );
-                    },//next page onPressed
-
+                    },//onPressed
                 ),
-
             ),
 
             Text(
