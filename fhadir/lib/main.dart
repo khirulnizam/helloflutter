@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:toast/toast.dart';
 import 'package:geolocator/geolocator.dart';
@@ -134,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // in the middle of the parent.
         child: Column(
 
-          mainAxisAlignment: MainAxisAlignment.start,
+          //mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Image(image: AssetImage('assets/fhadirbanner.png')),
             Padding(//TextField name
